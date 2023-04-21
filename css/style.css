@@ -89,6 +89,12 @@
 .social__link + .social__link  {
 	margin-left: 1em;
 }
+.social-icon {
+	transition: 0.3s;
+}
+.social-icon:hover {
+	transform: translateY(-0.2em);
+}
 .header__phone {
 	color: var(--white-c);
 	font-family: var(--title-f-f);

@@ -60,6 +60,11 @@
                                 <a href="#footer" class="menu__link">контакти</a>
                             </li>
                         </ul>
+                        <div class="burger">
+                            <span class="burger__item"></span>
+                            <span class="burger__item"></span>
+                            <span class="burger__item"></span>
+                        </div>
                     </nav>
                     <div class="header__buttons">
                         <button class="button__item">Придбати Авто</button>
@@ -119,7 +124,9 @@
                             <label for="year">Рік випуску</label>
                             <input type="text" class="form-buy__item" id="year" name="year">
                         </div>
-                        <input type="submit" class="form__btn" value="подати заявку">
+                        <button class="form__btn" value="подати заявку">
+                            <span class="btn__text">подати заявку</span>
+                        </button>
                     </fieldset>
                 </form>
             </div>
@@ -129,7 +136,7 @@
             <div class="wrapper">
                <div class="gelarry">
                     <figure class="gallery__item">
-                        <img src="images/card-car1.png" alt="car" class="card__img">
+                        <img src="images/cord-car2.png" alt="car" class="card__img">
                         <div class="car-info">
                             <ul class="car-list">
                                 <li class="car-list__item">
@@ -313,8 +320,10 @@
                             </div>
                         </figcaption>
                     </figure>
-               </div>
-               <button class="catalog__btn">більше пропозицій</button>
+                </div>
+                <button class="catalog__btn">
+                    <span class="btn__text">більше пропозицій</span>
+                </button>
         </section>
         <section class="services" id="services">
             <h2 class="title">наші послуги</h2>
@@ -414,22 +423,6 @@
                             Вітаємо на сайті продажу автомобілів! У нас ви знайдете широкий асортимент автомобілів різних марок та моделей, які задовольнять будь-які потреби та бюджет. Ми пропонуємо лише якісні та надійні автомобілі, які пройшли 
                         </p>
                     </div>
-                    <!-- <div class="testimonials__item">
-                        <img src="images/testimonials__img.svg" alt="client photo" class="testiomonials__img">
-                        <h4 class="testimonials__name">Тарас Шевченко</h4>
-                        <span class="testimonials__date">15.02.2023</span>
-                        <p class="testimonials__text">
-                            Вітаємо на сайті продажу автомобілів! У нас ви знайдете широкий асортимент автомобілів різних марок та моделей, які задовольнять будь-які потреби та бюджет. Ми пропонуємо лише якісні та надійні автомобілі, які пройшли 
-                        </p>
-                    </div>
-                    <div class="testimonials__item">
-                        <img src="images/testimonials__img.svg" alt="client photo" class="testiomonials__img">
-                        <h4 class="testimonials__name">Тарас Шевченко</h4>
-                        <span class="testimonials__date">15.02.2023</span>
-                        <p class="testimonials__text">
-                            Вітаємо на сайті продажу автомобілів! У нас ви знайдете широкий асортимент автомобілів різних марок та моделей, які задовольнять будь-які потреби та бюджет. Ми пропонуємо лише якісні та надійні автомобілі, які пройшли 
-                        </p>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -463,6 +456,7 @@
             <span class="copy">&copy; 2023 AutoWorld. Всі права захищені</span>
         </div>
     </footer>
-<script></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

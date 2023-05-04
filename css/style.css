@@ -44,6 +44,7 @@
 	background-color: rgb(237, 237, 237);
 	font-size: 20px;
 	font-family: "Mulish Regular";
+	position: relative;
 }
 .wrapper {
 	max-width: 1520px;
@@ -437,6 +438,7 @@
 	width: 100%;
 	height: 20%;
 	padding: 0 1em;
+	background-color: rgba(15, 15, 15, 0.8);
 }
 .card__title {
 	color: rgb(207, 207, 207);
@@ -587,11 +589,12 @@
 	color: rgb(31, 26, 23);
 }
 .testimonials {
-	padding: 4em 0;
+	padding: 4em 0 6em;
 	background-color: var(--white-c);
 }
 .testimonials__items {
-	margin-top: 2em;
+	margin: 2em auto 0;
+	width: 80%;
 	display: flex;
 	justify-content: center;
 	position: relative;
@@ -600,28 +603,24 @@
 	content: "";
 	position: absolute;
     top: 50%;
-    left: calc(100%-50%);
+    left: calc(100% - 50%);
     height: 120px;
-    width: 10%;
-	border-left: 1px solid var(--olive-c);
-	/* background-color: var(--olive-c); */
-	transform: rotate(0deg) translate(50%,-50%);
+    width: 1px;
+	background-color: var(--olive-c);
+	transform: translate(50%,-50%);
 }
 .testimonials__items:after {
 	content: "";
 	position: absolute;
     top: 120%;
-    left: calc(100%-50%);
-	transform: translate(0,100%);
+    left: calc(100% - 50%);
+	transform: translate(-50%,100%);
     height: 1px;
     width: 20%;
 	background-color: var(--olive-c);
 }
 .testimonials__item {
-	flex: 0 1 35%;
-}
-.testimonials__item:nth-child(even) {
-	margin-left: 11em;
+	margin: 0 2.5em;
 }
 .testimonials__wrap {
 	display: flex;
@@ -705,6 +704,126 @@
 	color: var(--white-c);
 	font-size: 0.7rem;
 }
+/*Стили для pop-up зворотній зв’язок */
+.pop-up {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	z-index: 10;
+}
+.form-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(98, 93, 93, 0.8);
+	width: 100%;
+	height: 100vh;
+}
+.form-call {
+	position: relative;
+	background-color: var(--white-c);
+	padding:  5em 3em;
+	border-radius: 5px;
+	z-index: 15;
+}
+.popup-close {
+	position: absolute;
+	top: 15px;
+	right: 1px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+.popup-close__item {
+	display: block;
+	height: 3px;
+	width: 30px;
+	background-color: var(--title-c);
+}
+.popup-close__item:first-child {
+	transform: rotate(45deg) translate(12px,5px);
+}
+.popup-close__item:last-child {
+	transform: rotate(-45deg) translate(-3px,10px);
+}
+.form-call__items {
+	display: flex;
+	flex-direction: column;
+}
+.form-call__items label {
+	color: var(--title-c);
+}
+.form-call__items label[for="phonenamber"] {
+	margin-top: 1em;
+}
+.call__item {
+	width: 300px;
+	height: 45px;
+	background-color: rgb(217, 217, 217);
+	border: none;
+	border-top: 2px solid rgb(173, 173, 173);
+	font-size: 1.5rem;
+	color: var(--olive-c);
+	box-sizing: border-box;
+	margin-top: 0.3em;
+}
+.call__item:focus {
+	border: 2px solid var(--olive-c);
+	background-color: var(--white-c);
+}
+.form-call__text:last-child {
+	margin-top: 2em;
+}
+/*конец стилей для pop-up зворотній зв’язок */
+.catalog-page .catalog {
+	margin-top: 5em;
+}
+.catalog-gallery {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 3em 0;
+}
+.gallery__item {
+	flex-basis: 23%;
+}
+.catalog-page .gallery__item:nth-child(n+5) {
+	margin-top: 2em;
+}
+.catalog-page .gallery__item:first-child .card__title {
+    font-size: 1rem;
+    margin-bottom: 0.2em;
+}
+.catalog-page .gallery__item:first-child .card__price {
+    font-size: 0.8rem;
+    margin-bottom: 0.2em;
+}
+.catalog-page .gallery__item:first-child .card__price-olive {
+    font-size: 1rem;
+}
+.catalog-page .gallery__item:first-child .per-month {
+    font-size: 1rem;
+}
+.catalog-page .gallery__item:first-child .car-list {
+    margin: 0 0.5em;
+}
+.catalog-page .gallery__item:first-child .car-list__item {
+    font-size: 0.7rem;
+    flex: 1 1 40%;
+}
+.catalog-page .gallery__item:first-child .car-list__item-white {
+    font-size: 0.8rem;
+}
+.catalog-page footer {
+	border-top: 3px solid var(--olive-c);
+}
+/* Конец стили для страницы каталог */
 @media (max-width: 1750px) {
 	.logo {
 		width: 280px;
@@ -743,6 +862,9 @@
 	}
 	.about__text {
 		font-size: 1.2rem;
+	}
+	.testimonials__item {
+		flex: 0 1 350px;
 	}
 }
 @media (max-width: 1432px) {
@@ -820,6 +942,61 @@
 	.footer {
 		padding-top: 3em;
 	}
+	.testimonials__items {
+		width: 90%;
+	}
+	.slick-prev {
+		left: -25px;
+		z-index: 5;
+	}
+	.slick-next {
+		right: -25px;
+	}
+	/* Мобильный стили для станицы каталог max-width: 1432px */
+	.gallery__item {
+		flex-basis: 33%;
+	}
+	.catalog-page .gallery__item:nth-child(n+4) {
+		margin-top: 2em;
+	}
+	.catalog-page .gallery__item:last-child {
+		margin-right: auto;
+		margin-left: 0.5%;
+	}
+	.catalog-page .card__text {
+		position: relative;
+		bottom: 0%;
+		top: 48%;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		margin: 0 0;
+		padding: 0.3em 0.3em;
+		border-bottom: 1px solid var(--olive-c);
+	}
+	.catalog-page .gallery__item:first-child .card__price {
+		font-size: 0.7rem;
+	}
+	.catalog-page .gallery__item:first-child .card__price-olive {
+		font-size: 0.9rem;
+	}
+	.catalog-page .gallery__item:first-child .per-month {
+		font-size: 0.8rem;
+	}
+	.catalog-page .gallery__item:first-child .car-list {
+		margin: 0 0.5em;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item {
+		font-size: 0.7rem;
+		flex: 1 1 40%;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item-white {
+		font-size: 0.8rem;
+	}
+	.catalog-page footer {
+		border-top: 3px solid var(--olive-c);
+	}
+	/* Конец мобильный стилей для станицы каталог max-width: 1432px */
 }
 @media (max-width: 1075px) {
 	.header__email {
@@ -983,7 +1160,7 @@
 		color: var(--title-c);
 	}
 	.testimonials__items {
-		justify-content: space-between;
+		width: 100%;
 	}
 	.testimonials__items:before {
 		content: "";
@@ -991,17 +1168,14 @@
 		top: 50%;
 		left: 50%;
 		height: 120px;
-		transform: translateY(-50%);
+		transform: translate(-50%, -50%);
 	}
 	.testimonials__items:after {
 		left: 50%;
 		transform: translate(-50%,100%);
 	}
 	.testimonials__item {
-		flex: 0 1 40%;
-	}
-	.testimonials__item:nth-child(even) {
-		margin-left: 0;
+		flex: 0 1 300px;
 	}
 	.testiomonials__img {
 		display: block;
@@ -1013,12 +1187,85 @@
 	.testimonials__date {
 		font-size: 0.7rem;
 	}
+	.slick-prev, .slick-next {
+		width: 30px;
+		height: 30px;
+	}
+	.slick-prev:before, .slick-next:before {
+		font-size: 20px;
+	}
+	.slick-dots {
+		position: absolute;
+		bottom: -85px;
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-align: center;
+	}
 	.footer__adress {
 		margin-left: 3em;
 	}
 	.footer__schedule {
 		margin-left: 3em;
 	}
+	/* Мобильный стили для станицы каталог max-width: 1075px */
+	.catalog-page .gallery__item {
+		flex-basis: 48%;
+		display: flex;
+		flex-direction: column;
+	}
+	.catalog-page .gallery__item:nth-child(n+3) {
+		margin-top: 1em;
+	}
+	.catalog-page .car-info {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 1;
+		background-color: rgba(15, 15, 15, 0.8);
+		border-top: none;
+		border-bottom: 3px solid var(--olive-c);
+		transition: 0.4s;
+		order: 3;
+	}
+	.catalog-page .gallery__item:first-child .car-list {
+		margin: 0;
+		padding: 0;
+	}
+	.catalog-page .car-list {
+		margin: 0;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-bottom: 0.7em;
+	}
+	.catalog-page .gallery__item:first-child .car-list {
+		margin: 0;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-bottom: 0.7em;
+	}
+	.catalog-page .car-list__item {
+		flex: 0 1 40%;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item {
+		flex: 0 1 40%;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item-white {
+		font-size: 0.7rem;
+	}
+	/* Конец мобильный стилей для станицы каталог max-width: 1075px */
+	/* Мобильный стили для popup-call max-width: 1075px */
+	.pop-up {
+		z-index: 10;
+	}
+		.form-call {
+		padding: 4em 2em;
+	}
+	/* Конец мобильный стилей для popup-call max-width: 1075px */
 }
 @media (max-width: 770px) {
 	.header__email {
@@ -1109,20 +1356,16 @@
 		width: 75%;
 	}
 	.testimonials__items {
-		justify-content: center;
-		flex-wrap: wrap;
+		width: 85%;
 	}
 	.testimonials__items:before {
 		display: none;
 	}
-	.testimonials__items:after {
-		display: none;
+	.testimonials__wrap {
+		justify-content: center;
 	}
-	.testimonials__item {
-		flex: 0 1 70%;
-	}
-	.testimonials__item:last-child {
-		display: none;
+	.testimonials__text {
+		text-align: center;
 	}
 	.footer__items {
 		flex-direction: column;
@@ -1161,6 +1404,105 @@
 	.schedule__weekend {
 		font-size: 0.7rem;
 	}
+	/* Мобильный стили для станицы каталог max-width: 770px */
+	.catalog-page .card__text {
+		position: relative;
+		bottom: 0%;
+		top: 48%;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		margin: 0 0;
+		padding: 0.3em 0.3em;
+		border-bottom: 1px solid var(--olive-c);
+	}
+	.catalog-page .gallery__item:first-child .card__text {
+		position: relative;
+		bottom: 0%;
+		top: 48%;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		margin: 0 0;
+		padding: 0.3em 0.3em;
+		background-color: rgba(15, 15, 15, 0.8);
+	}
+	.catalog-page .gallery__item:nth-child(n+4) {
+		margin-top: 1em;
+	}
+	.catalog-page .gallery__item {
+		flex-basis: 100%;
+	}
+	.catalog-page .gallery__item:nth-child(n+2) {
+		margin-top: 1.5em;
+	}
+	.catalog-page .car-info {
+		display: block;
+	}
+	.catalog-page .card__text {
+		padding: 1em 0.7em;
+	}
+	.catalog-page .gallery__item:first-child .card__text {
+		padding: 1em 0.7em;
+	}
+	.catalog-page .card__title {
+		font-size: 1.5rem;
+		margin-bottom: 0.5em;
+	}
+	.catalog-page .gallery__item:first-child .card__title {
+		font-size: 1.5rem;
+		margin-bottom: 0.5em;
+	}
+	.catalog-page .card__price {
+		font-size: 0.9rem;
+	}
+	.catalog-page .gallery__item:first-child .card__price {
+		font-size: 0.9rem;
+	}
+	.catalog-page .card__price-olive {
+		font-size: 1.4rem;
+	}
+	.catalog-page .gallery__item:first-child .card__price-olive {
+		font-size: 1.4rem;
+	}
+	.catalog-page .per-month {
+		font-size: 1.4rem;
+	}
+	.catalog-page .gallery__item:first-child .per-month {
+		font-size: 1.4rem;
+	}
+	.catalog-page .car-list {
+		padding-left: 1em;
+		padding-right: 0.9em;
+		padding-bottom: 0.7em;
+		padding-top: 1em;
+	}
+	.catalog-page .gallery__item:first-child .car-list {
+		padding-left: 1em;
+		padding-right: 0.9em;
+		padding-bottom: 0.7em;
+		padding-top: 1em;
+	}
+	.catalog-page .car-list__item {
+		font-size: 0.9rem;
+		margin-top: 0.8em;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item {
+		font-size: 0.9rem;
+		margin-top: 0.8em;
+	}
+	.catalog-page .car-list__item-white {
+		font-size: 0.9rem;
+	}
+	.catalog-page .gallery__item:first-child .car-list__item-white {
+		font-size: 0.9rem;
+	}
+	/*Конец мобильный стилей для станицы каталог max-width: 770px */
+	/* Мобильный стили для popup-call max-width: 770px */
+	.form-call__items label {
+		font-size: 1rem;
+	}
+	/* Конец мобильный стилей для popup-call max-width: 770px */
 }
 @media (max-width: 500px) {
 	.wrapper {
@@ -1261,14 +1603,38 @@
 		padding: 0.8em 1.2em;
 		transform: translate(50%,-50%);
 	}
-	.testimonials__item {
-		flex: 0 1 90%;
+	.testimonials__items {
+		width: 100%;
 	}
 	.testiomonials__img {
 		width: 30%;
 	}
+	.slick-prev, .slick-next {
+		width: 25px;
+		height: 25px;
+	}
+	.slick-prev {
+		left: 0;
+	}
+	.slick-next {
+		right: 0;
+	}
+	.slick-prev:before, .slick-next:before {
+		font-size: 15px;
+	}
+	.testiomonials__img {
+		display: block;
+		margin-right: 0.5em;
+	}
 	.testimonials__name {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
+	}
+	.testimonials__text {
+		color: var(--title-c);
+		font-size: 0.7rem;
+	}
+	.slick-dots li button:before {
+		font-size: 12px;
 	}
 	.footer {
 		padding-top: 1.5em;
@@ -1295,4 +1661,48 @@
 		flex-basis: 50%;
 		text-align: center;
 	}
+	/* Мобильный стили для станицы каталог max-width: 500px */
+	.catalog-page .card__text {
+		padding: 0.7em 0.5em;
+	}
+	.catalog-page .card__title {
+		font-size: 1rem;
+		margin-bottom: 0.5em;
+	}
+	.catalog-page .card__price {
+		font-size: 0.7rem;
+	}
+	.catalog-page .card__price-olive {
+		font-size: 1rem;
+	}
+	.catalog-page .per-month {
+		font-size: 1rem;
+	}
+	.catalog-page .car-list {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		padding-bottom: 0.7em;
+		padding-top: 0.7em;
+	}
+	.catalog-page .car-list__item {
+		font-size: 0.7rem;
+		margin-top: 0.5em;
+	}
+	.catalog-page .car-list__item-white {
+		font-size: 0.7rem;
+	}
+	/*Конец мобильный стилей для станицы каталог max-width: 500px */
+	/* Мобильный стили для popup-call max-width: 500px */
+	.form-call {
+		padding: 3em 1.5em;
+	}
+	.call__item {
+		width: 270px;
+		height: 40px;
+	}
+	.popup-close__item {
+		width: 25px;
+	}
+	/* Конец мобильный стилей для popup-call max-width: 500px */
+	
 }

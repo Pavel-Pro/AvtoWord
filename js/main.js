@@ -21,10 +21,10 @@ $(".gallery__item:nth-child(n+2)").click(function() {
 });
 
 $(".button__item:last-child").click(function() {
-    $(".pop-up").css({"display" : "flex"});
-    $(".body").css({"position" : "fixed"});
+    $(".pop-up").addClass("show");
+    $(".body").addClass("fixed");
 });
 $(".popup-close, .form-bg").click(function() {
-    $(".pop-up").css({"display" : "none"});
-    $(".body").css({"position" : "relarive"});
+    $(".pop-up").removeClass("show");
+    $(".body").removeClass("fixed");
 });

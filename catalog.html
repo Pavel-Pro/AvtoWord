@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Avto Word</title>
 </head>
-<body class="body catalog-page">
+    <body class="body catalog-page">
     <header class="header">
         <div class="header-top">
             <div class="wrapper">
@@ -850,6 +850,24 @@
             <span class="copy">&copy; 2023 AutoWorld. Всі права захищені</span>
         </div>
     </footer>
+    <div class="pop-up">
+        <div class="form-bg"></div>
+        <form action="post" class="form-call">
+            <div class="popup-close">
+                <span class="popup-close__item"></span>
+                <span class="popup-close__item"></span>
+            </div>
+            <fieldset class="form-call__items">
+                <label for="name">Имя</label>
+                <input type="text" class="call__item" name="name">
+                <label for="phonenamber">Номер телефона</label>
+                <input type="text" class="call__item" name="phonenamber">
+                <button class="pop-up__btn">
+                    <span class="btn__text">Відправити</span>
+                </button>
+            </fieldset>
+        </form>
+    </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/main.js"></script>
 </body>

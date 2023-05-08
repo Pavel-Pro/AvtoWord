@@ -235,7 +235,7 @@
 	transition-timing-function: ease;
 	transition-property: height;
 	transition-delay: 0;
-	transition-duration: 0.2s;
+	
 	box-sizing: border-box;
 	z-index: 1;
 }
@@ -252,8 +252,7 @@
 	width: 2px;
 	background-color: var(--olive-c);
 	transition-property: height;
-	transition-duration: 0.4s;
-	transition-delay: 0.4s;
+	
 	box-sizing: border-box;
 	z-index: 1;
 }
@@ -281,9 +280,13 @@
 	transition-duration: 0.2s;
 	transition-delay: 0.7s;
 }
-.hero-buttons__item:hover:before,
+.hero-buttons__item:hover:before {
+	height: 100%;
+	transition-duration: 0.2s;
+}
 .hero-buttons__item:hover:after {
 	height: 100%;
+	transition-delay: 0.4s;
 }
 .hero-buttons__item:hover .button__text:before,
 .hero-buttons__item:hover .button__text:after {

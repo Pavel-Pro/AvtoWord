@@ -221,22 +221,23 @@
 	height: 50px;
 	background-color: var(--white-c);
 	position: relative;
-	border-left: 2px solid var(--olive-c);
-	border-right: 2px solid var(--olive-c);
+	/* border-left: 2px solid var(--olive-c);
+	border-right: 2px solid var(--olive-c); */
 }
 .hero-buttons__item:before {
 	content: "";
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	top: 0;
+	left: 0;
 	height: 0;
-	width: 0;
-	border: 2px solid transparent;
-	transition-timing-function: linear;
-	transition-property: width, height;
-	transition-duration: 0.2s, 0.2s;
-	transition-delay: 0.8s, 0.5s;
+	width: 2px;
+	background-color: var(--olive-c);
+	transition-timing-function: ease;
+	transition-property: height;
+	transition-delay: 0;
+	transition-duration: 0.2s;
 	box-sizing: border-box;
+	z-index: 1;
 }
 .hero-buttons__item:hover {
 	border-left: none;
@@ -245,28 +246,48 @@
 .hero-buttons__item:after {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
+	bottom: 0;
+	right: 0;
 	height: 0;
-	width: 0;
-	border: 2px solid transparent;
-	transition-timing-function: ;
-	transition-property: height, width;
-	transition-duration: 0.2s, 0.2s;
-	transition-delay: 0s, 0.2s;
+	width: 2px;
+	background-color: var(--olive-c);
+	transition-property: height;
+	transition-duration: 0.4s;
+	transition-delay: 0.4s;
 	box-sizing: border-box;
+	z-index: 1;
 }
-.hero-buttons__item:hover:before {
-	width: 100%;
-	height: 100%;
-	border-top: 2px solid var(--olive-c);
-	border-right: 2px solid var(--olive-c);
+.hero-buttons__item .button__text:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 0;
+	background-color: var(--olive-c);
+	transition-property: width;
+	transition-duration: 0.2s;
+	transition-delay: 0.2s;
 }
+.hero-buttons__item .button__text:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 2px;
+	width: 0%;
+	background-color: var(--olive-c);
+	transition-property: width;
+	transition-duration: 0.2s;
+	transition-delay: 0.7s;
+}
+.hero-buttons__item:hover:before,
 .hero-buttons__item:hover:after {
-	width: 100%;
 	height: 100%;
-	border-bottom: 2px solid var(--olive-c);
-	border-left: 2px solid var(--olive-c);
+}
+.hero-buttons__item:hover .button__text:before,
+.hero-buttons__item:hover .button__text:after {
+	width: 100%;
 }
 .form-buy {
 	background-color: var(--white-c);
@@ -313,6 +334,7 @@
 	color: var(--title-c);
 	position: relative;
 	transition: 0.3s;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 .form__btn:before {
 	content: "";
@@ -797,6 +819,7 @@
     color: var(--title-c);
     position: relative;
     transition: 0.3s;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 .pop-up__btn:before {
 	content: "";

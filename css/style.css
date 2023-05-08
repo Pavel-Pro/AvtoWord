@@ -221,8 +221,8 @@
 	height: 50px;
 	background-color: var(--white-c);
 	position: relative;
-	/* border-left: 2px solid var(--olive-c);
-	border-right: 2px solid var(--olive-c); */
+	border-left: 2px solid var(--olive-c);
+	border-right: 2px solid var(--olive-c);
 }
 .hero-buttons__item:before {
 	content: "";

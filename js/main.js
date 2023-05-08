@@ -2,9 +2,8 @@ $(".burger").click(function() {
     $(".menu").toggleClass("show-menu");
     $(".burger__item").toggleClass("open");
 });
-$(".gallery__item:nth-child(n+2)").click(function() {
-    $(".gallery__item:first-child").empty();
-    $(this).children().clone().appendTo(".gallery__item:first-child");
+$(".gallery__item").click(function() {
+    $(this).prependTo(".gelarry");
 });
 
 $(".button__item:last-child").click(function() {

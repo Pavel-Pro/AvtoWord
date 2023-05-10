@@ -572,6 +572,7 @@
 .services__img {
 	display: block;
 	width: 100%;
+	height: 100%;
 }
 .services__info {
 	position: absolute;
@@ -731,6 +732,66 @@
 	color: var(--white-c);
 	font-size: 0.7rem;
 }
+/* Начало стилей для страницы каталог */
+.catalog-page {
+	position: relative;
+}
+.catalog-page .catalog {
+	margin-top: 5em;
+}
+.catalog-gallery {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 3em 0;
+}
+.gallery__item {
+	flex-basis: 23%;
+}
+.catalog-page .gallery__item:nth-child(n+5) {
+	margin-top: 2em;
+}
+.catalog-page .gallery__item:first-child .card__title {
+    font-size: 1rem;
+    margin-bottom: 0.2em;
+}
+.catalog-page .gallery__item:first-child .card__price {
+    font-size: 0.8rem;
+    margin-bottom: 0.2em;
+}
+.catalog-page .gallery__item:first-child .card__price-olive {
+    font-size: 1rem;
+}
+.catalog-page .gallery__item:first-child .per-month {
+    font-size: 1rem;
+}
+.catalog-page .gallery__item:first-child .car-list {
+    margin: 0 0.5em;
+}
+.catalog-page .gallery__item:first-child .car-list__item {
+    font-size: 0.7rem;
+    flex: 1 1 40%;
+}
+.catalog-page .gallery__item:first-child .car-list__item-white {
+    font-size: 0.8rem;
+}
+.catalog-page .gallery__item:hover .car-info {
+    height: calc(62% - 6px);
+    opacity: 1;
+}
+.catalog-page .card__text {
+	bottom: 50px;
+}
+.catalog-page .catalog-card__btn {
+	height: 50px;
+	border: 2px solid var(--olive-c);
+	width: 100%;
+	margin: 0;
+}
+.catalog-page footer {
+	border-top: 3px solid var(--olive-c);
+}
+/* Конец стили для страницы каталог */
 /*Стили для pop-up зворотній зв’язок */
 .pop-up {
 	position: absolute;
@@ -843,49 +904,6 @@
 	color: var(--white-c);
 }
 /*конец стилей для pop-up зворотній зв’язок */
-.catalog-page .catalog {
-	margin-top: 5em;
-}
-.catalog-gallery {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding: 3em 0;
-}
-.gallery__item {
-	flex-basis: 23%;
-}
-.catalog-page .gallery__item:nth-child(n+5) {
-	margin-top: 2em;
-}
-.catalog-page .gallery__item:first-child .card__title {
-    font-size: 1rem;
-    margin-bottom: 0.2em;
-}
-.catalog-page .gallery__item:first-child .card__price {
-    font-size: 0.8rem;
-    margin-bottom: 0.2em;
-}
-.catalog-page .gallery__item:first-child .card__price-olive {
-    font-size: 1rem;
-}
-.catalog-page .gallery__item:first-child .per-month {
-    font-size: 1rem;
-}
-.catalog-page .gallery__item:first-child .car-list {
-    margin: 0 0.5em;
-}
-.catalog-page .gallery__item:first-child .car-list__item {
-    font-size: 0.7rem;
-    flex: 1 1 40%;
-}
-.catalog-page .gallery__item:first-child .car-list__item-white {
-    font-size: 0.8rem;
-}
-.catalog-page footer {
-	border-top: 3px solid var(--olive-c);
-}
-/* Конец стили для страницы каталог */
 @media (max-width: 1750px) {
 	.logo {
 		width: 280px;
@@ -1027,7 +1045,7 @@
 	}
 	.catalog-page .card__text {
 		position: relative;
-		bottom: 0%;
+		bottom: 0;
 		top: 48%;
 		left: 0;
 		width: 100%;
@@ -1035,6 +1053,9 @@
 		margin: 0 0;
 		padding: 0.3em 0.3em;
 		border-bottom: 1px solid var(--olive-c);
+	}
+	.catalog-page .gallery__item:hover .car-info {
+		height: calc(74% - 6px);
 	}
 	.catalog-page .gallery__item:first-child .card__price {
 		font-size: 0.7rem;
@@ -1058,6 +1079,7 @@
 	.catalog-page footer {
 		border-top: 3px solid var(--olive-c);
 	}
+
 	/* Конец мобильный стилей для станицы каталог max-width: 1432px */
 }
 @media (max-width: 1075px) {
@@ -1292,7 +1314,6 @@
 		border-top: none;
 		border-bottom: 3px solid var(--olive-c);
 		transition: 0.4s;
-		order: 3;
 	}
 	.catalog-page .gallery__item:first-child .car-list {
 		margin: 0;
@@ -1561,6 +1582,10 @@
 	}
 	.catalog-page .gallery__item:first-child .car-list__item-white {
 		font-size: 0.9rem;
+	}
+	.catalog-card__btn {
+		background-color: var(--olive-c);
+		color: var(--white-c);
 	}
 	/*Конец мобильный стилей для станицы каталог max-width: 770px */
 	/* Мобильный стили для popup-call max-width: 770px */
